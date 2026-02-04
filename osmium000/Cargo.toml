@@ -1,0 +1,13 @@
+[package]
+name = "osmium"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[profile.dev]
+panic = "abort" # limitation of not using std.
+# I could not tell you the difference between abort and panic with a gun to my head
+
+[profile.release]
+panic = "abort"
