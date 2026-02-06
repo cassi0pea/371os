@@ -1,12 +1,17 @@
 use malloc::*; // crate name
 
 fn main() {
+    // i believe these are pointers, returned by malloc after asking for 16 and 32 bytes
+    // respectively
     let p0 = malloc(16).unwrap();
     let p1 = malloc(32).unwrap();
+    // these are sample values, in hex because it's calvin
     let x = 0x44332211;
     let y = 0x12345678;
+    // "please store _this_ value at _this_ location in memory" 
     setter(x, p0);
     setter(y, p1);
+    // 
     let z: i32 = getter(p0);
     let w: i32 = getter(p1);
     assert!(x == z);
